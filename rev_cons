@@ -1,0 +1,18 @@
+def removeConsecutiveDuplicates(s):
+    # If string is empty
+    if not s:
+        return ""
+    
+    result = s[0]   # First character always included
+    
+    for i in range(1, len(s)):
+        if s[i] != s[i - 1]:   # Compare with previous character
+            result += s[i]
+    
+    return result
+
+
+# Example usage
+print(removeConsecutiveDuplicates("aabb"))      # Output: ab
+print(removeConsecutiveDuplicates("aabaa"))     # Output: aba
+print(removeConsecutiveDuplicates("abcddcba"))  # Output: abcdcba
